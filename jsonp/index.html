@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script src="./jsonp.js"></script>
+  <script>
+    (()=>{
+      const url = 'http://api.flickr.com/services/feeds/photos_public.gne?';
+      jsonP(url, {
+        data: {
+          tags: 'cat',
+          tagmode: 'any',
+          format: 'json'
+        }
+      }).then((data)=> console.log(data));
+      
+      jsonP(url, {
+        data: {
+          tags: 'cat',
+          tagmode: 'any',
+          format: 'json',
+          n:0,
+          n1:2,
+          a:'&a=1&n=1',
+          n2:undefined,
+          n3:NaN,
+          n4:'',
+          n5: [1,2,3]
+        },
+        callback: function(data){
+          console.log('this is callback data', data);
+        }
+      }).then((data)=> console.log(data));
+    })();
+  </script>
+</body>
+</html>
