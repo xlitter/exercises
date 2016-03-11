@@ -1,0 +1,26 @@
+{
+  "name": "exercises",
+  "version": "1.0.0",
+  "description": "**练习题**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xlitter/exercises.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xlitter/exercises/issues"
+  },
+  "homepage": "https://github.com/xlitter/exercises#readme",
+  "devDependencies": {
+    "bufferstreams": "^1.1.0",
+    "concat-stream": "^1.5.1",
+    "gulp-util": "^3.0.7",
+    "should": "^8.2.2",
+    "vinyl": "^1.1.1"
+  }
+}
