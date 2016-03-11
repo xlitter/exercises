@@ -4,7 +4,7 @@ const Bufferstreams = require('bufferstreams');
 
 function gulpReplaceCssLink() {
   const PLUGIN_NAME = 'gulp-replace-css-link';
-  const replaceReg = /\s*<link.+rel=['"]stylesheet['"].*(?:\/)?>/gi;
+  const replaceReg = /\s*<link.+?rel\s*=\s*[\'\"]stylesheet[\'\"].*?(?:\/)?>/gi;
 
   return new Stream.Transform({
     objectMode: true,
