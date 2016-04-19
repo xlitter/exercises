@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body {
+      margin: 0;
+    }
+    
+    .slide img {
+      /*position: absolute;*/
+      /*top: 0;*/
+      /*left: 0;*/
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="slide" class="slide">
+      <img src="./img/example-slide-1.jpg" alt="">
+      <img src="./img/example-slide-2.jpg" alt="">
+      <img src="./img/example-slide-3.jpg" alt="">
+      <!--<img src="./img/example-slide-4.jpg" alt="">-->
+    </div>
+  </div>
+  <button id="prev">previous</button>
+  <button id="next">next</button>
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="./slide.js"></script>
+  <script>
+    $(()=>{
+      const slide = $('#slide').slide();
+      $('#prev').on('click', e=> slide.previous());
+      $('#next').on('click', e=> slide.next());
+    });
+  </script>
+</body>
+
+</html>

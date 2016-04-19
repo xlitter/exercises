@@ -14,12 +14,12 @@ function jsonP(url, settings) {
     if (!jsonP.callbacks) {
       jsonP.callbacks = {};
     }
-    const callbackName = `callback_${callbackId}`
+    const callbackName = `callback_${callbackId}`;
     jsonP.callbacks[callbackName] = function (data) {
       jsonpCallback && jsonpCallback(data);
       jsonP.callbacks[callbackName].data = data;
       jsonP.callbacks[callbackName].isCalled = true;
-    }
+    };
 
     const data = Object.assign({}, { jsoncallback: `jsonP.callbacks.${callbackName}` }, settings.data || {});
 
@@ -40,7 +40,7 @@ function jsonP(url, settings) {
       script.async = true;
 
       function cb(e) {
-       
+
         const handle = jsonP.callbacks[callbackName]
         if (e.type === 'load' && handle.isCalled) {
           resolve(handle.data);
@@ -56,10 +56,7 @@ function jsonP(url, settings) {
       script.addEventListener('error', cb, false);
 
       document.body.appendChild(script);
-
     }
-    
     jsonpReq(url);
   });
-
 }
